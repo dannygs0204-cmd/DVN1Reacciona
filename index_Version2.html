@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DVN1Reacciona</title>
+<style>
+    body { font-family:'Arial',sans-serif; margin:0; background:#111; color:#fff;}
+    header {background:#ff4081; padding:20px; text-align:center; position:sticky; top:0; z-index:1000;}
+    header h1 {margin:0; font-size:2em; animation:pulse 2s infinite;}
+    @keyframes pulse {0%,100%{transform:scale(1);}50%{transform:scale(1.05);}}
+    nav {text-align:center; margin-top:10px;}
+    nav a {color:#fff; text-decoration:none; margin:0 15px; font-weight:bold; transition:0.3s;}
+    nav a:hover {color:#ffd700;}
+    section {padding:40px 20px; max-width:900px; margin:auto;}
+    .review, .lyrics, .comment, .tbt-review {background:#1f1f1f; padding:20px; margin-bottom:20px; border-radius:10px; transition:0.3s;}
+    .review:hover, .lyrics:hover {background:#2a2a2a;}
+    h2 {color:#ff4081; text-align:center; margin-bottom:20px;}
+    h3 {color:#ffd700; margin-top:0;}
+    .stars {color:gold; cursor:pointer; font-size:1.2em;}
+    .lyrics a {color:#ff4081; text-decoration:underline;}
+    input, textarea, button {width:100%; padding:10px; margin-top:10px; border-radius:5px; border:none; font-size:1em;}
+    button {background:#ff4081; color:#fff; font-weight:bold; cursor:pointer; transition:0.3s;}
+    button:hover {background:#e73578;}
+    .comment p, .tbt-review p {margin:5px 0;}
+    #google_translate_element {text-align:center; margin:10px 0;}
+</style>
+</head>
+<body>
+
+<header>
+    <h1>DVN1Reacciona</h1>
+    <div id="google_translate_element"></div>
+    <nav>
+        <a href="#albums">Álbumes</a>
+        <a href="#singles">Singles</a>
+        <a href="#lyrics">Letras</a>
+        <a href="#tbt">TBT</a>
+        <a href="#comments">Comentarios</a>
+    </nav>
+</header>
+
+<!-- Álbumes -->
+<section id="albums">
+    <h2>Reseñas de Álbumes</h2>
+    <div class="review">
+        <h3>Nombre del Álbum - Artista</h3>
+        <p><strong>Fecha de lanzamiento:</strong> 00/00/2025</p>
+        <p><strong>Reseña:</strong> Aquí tu opinión sobre el álbum, canciones favoritas y concepto.</p>
+        <div>
+            <span class="stars" data-value="1">&#9733;</span>
+            <span class="stars" data-value="2">&#9733;</span>
+            <span class="stars" data-value="3">&#9733;</span>
+            <span class="stars" data-value="4">&#9733;</span>
+            <span class="stars" data-value="5">&#9733;</span>
+        </div>
+    </div>
+</section>
+
+<!-- Singles -->
+<section id="singles">
+    <h2>Reseñas de Singles</h2>
+    <div class="review">
+        <h3>Nombre del Single - Artista</h3>
+        <p><strong>Fecha de lanzamiento:</strong> 00/00/2025</p>
+        <p><strong>Reseña:</strong> Opinión sobre la canción, videoclip y coreografía.</p>
+        <div>
+            <span class="stars" data-value="1">&#9733;</span>
+            <span class="stars" data-value="2">&#9733;</span>
+            <span class="stars" data-value="3">&#9733;</span>
+            <span class="stars" data-value="4">&#9733;</span>
+            <span class="stars" data-value="5">&#9733;</span>
+        </div>
+    </div>
+</section>
+
+<!-- Letras -->
+<section id="lyrics">
+    <h2>Letras traducidas al español</h2>
+    <div class="lyrics">
+        <h3>Nombre de la Canción - Artista</h3>
+        <p><strong>Letra original:</strong> Staring at the stars, I see your face...</p>
+        <p><strong>Traducción:</strong> Mirando las estrellas, veo tu rostro...</p>
+        <p><a href="https://www.youtube.com/watch?v=ejemplo" target="_blank">Escuchar la canción</a></p>
+    </div>
+</section>
+
+<!-- TBT -->
+<section id="tbt">
+    <h2>TBT - Recomendaciones de mis favoritos</h2>
+    
+    <div class="review">
+        <h3>Nombre de la Canción o Álbum - Artista</h3>
+        <p><strong>Por qué me gusta:</strong> Explicación personal de la recomendación.</p>
+        <p><a href="https://www.youtube.com/watch?v=ejemplo" target="_blank">Escuchar</a></p>
+        <div>
+            <span class="stars" data-value="1">&#9733;</span>
+            <span class="stars" data-value="2">&#9733;</span>
+            <span class="stars" data-value="3">&#9733;</span>
+            <span class="stars" data-value="4">&#9733;</span>
+            <span class="stars" data-value="5">&#9733;</span>
+        </div>
+    </div>
+
+    <h3>Deja tu recomendación</h3>
+    <form id="tbtForm">
+        <input type="text" id="tbtName" placeholder="Tu nombre" required>
+        <input type="text" id="tbtTitle" placeholder="Nombre de la canción o álbum" required>
+        <textarea id="tbtMessage" rows="3" placeholder="Por qué lo recomiendas..." required></textarea>
+        <button type="submit">Enviar recomendación</button>
+    </form>
+    <div id="tbtContainer"></div>
+</section>
+
+<!-- Comentarios -->
+<section id="comments">
+    <h2>Comentarios</h2>
+    <div id="commentsContainer">
+        <div class="comment">
+            <p><strong>Juan:</strong> ¡Me encantó la reseña del álbum!</p>
+        </div>
+    </div>
+    <h3>Deja tu comentario</h3>
+    <form id="commentForm">
+        <input type="text" id="name" placeholder="Nombre" required>
+        <textarea id="message" rows="4" placeholder="Escribe tu comentario..." required></textarea>
+        <button type="submit">Enviar</button>
+    </form>
+</section>
+
+<footer>
+    <p>&copy; 2025 DVN1Reacciona. Todos los derechos reservados.</p>
+</footer>
+
+<script>
+    // Comentarios en tiempo real
+    const form = document.getElementById('commentForm');
+    const commentsContainer = document.getElementById('commentsContainer');
+    form.addEventListener('submit', function(e){
+        e.preventDefault();
+        const name = document.getElementById('name').value;
+        const message = document.getElementById('message').value;
+        const div = document.createElement('div');
+        div.classList.add('comment');
+        div.innerHTML = `<p><strong>${name}:</strong> ${message}</p>`;
+        commentsContainer.appendChild(div);
+        form.reset();
+    });
+
+    // TBT
+    const tbtForm = document.getElementById('tbtForm');
+    const tbtContainer = document.getElementById('tbtContainer');
+    tbtForm.addEventListener('submit', function(e){
+        e.preventDefault();
+        const name = document.getElementById('tbtName').value;
+        const title = document.getElementById('tbtTitle').value;
+        const message = document.getElementById('tbtMessage').value;
+        const div = document.createElement('div');
+        div.classList.add('tbt-review');
+        div.innerHTML = `<h3>${title}</h3><p><strong>${name} recomienda:</strong> ${message}</p>`;
+        tbtContainer.appendChild(div);
+        tbtForm.reset();
+    });
+
+    // Sistema de estrellas interactivo
+    const stars = document.querySelectorAll('.stars');
+    stars.forEach(star => {
+        star.addEventListener('click', function(){
+            const value = this.getAttribute('data-value');
+            const siblings = this.parentNode.querySelectorAll('.stars');
+            siblings.forEach(s=>s.style.color='#fff');
+            siblings.forEach(s=>{if(s.getAttribute('data-value')<=value){s.style.color='gold';}});
+        });
+    });
+</script>
+
+<!-- Google Translate -->
+<script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement(
+    {pageLanguage: 'es', layout: google.translate.TranslateElement.InlineLayout.SIMPLE},
+    'google_translate_element'
+  );
+}
+</script>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+</body>
+</html>
